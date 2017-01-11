@@ -7,6 +7,9 @@
 *.sln.docstates
 
 # Build results
+.config
+packages
+bin
 
 [Dd]ebug/
 [Rr]elease/
