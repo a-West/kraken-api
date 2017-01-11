@@ -23,7 +23,7 @@ namespace KrakenClientConsole
         public static void Main(string[] args)
         {
             Console.WriteLine("calling kraken api...\n\n");
-            
+
             #region Simple requests
 
             //var time = client.GetServerTime();
@@ -32,17 +32,17 @@ namespace KrakenClientConsole
             //var assets = client.GetActiveAssets();
             //Console.WriteLine("assets: " + assets.ToString() + "\n\n");
 
-            //var assetPairs = client.GetAssetPairs(new List<string> { "XXBTZEUR" });
-            //Console.WriteLine("asset pairs: " + assetPairs.ToString() + "\n\n");
+            var assetPairs = client.GetAssetPairs(new List<string> { "XXMRXXBT" });
+            Console.WriteLine("asset pairs: " + assetPairs.ToString() + "\n\n");
 
-            //var ticker = client.GetTicker(new List<string> { "XXBTZEUR" });
-            //Console.WriteLine("ticker: " + ticker.ToString() + "\n\n");
+            var ticker = client.GetTicker(new List<string> { "XXMRXXBT" });
+            Console.WriteLine("ticker: " + ticker.ToString() + "\n\n");
 
-            //var depth = client.GetOrderBook("XXBTZUSD", 1);
-            //Console.WriteLine("depth: " + depth.ToString() + "\n\n");
+            var depth = client.GetOrderBook("XXMRXXBT", 1);
+            Console.WriteLine("depth: " + depth.ToString() + "\n\n");
 
-            //var trades = client.GetRecentTrades("XXBTZEUR", 137589964200000000);
-            //Console.WriteLine("trades: " + trades.ToString() + "\n\n");
+            var trades = client.GetRecentTrades("XXMRXXBT", 137589964200000000);
+            Console.WriteLine("trades: " + trades.ToString() + "\n\n");
 
             //var spreads = client.GetRecentSpreadData("XXBTZEUR", 137589964200000000);
             //Console.WriteLine("spreads: " + spreads.ToString() + "\n\n");
@@ -79,9 +79,9 @@ namespace KrakenClientConsole
 
             //var tradeVolume = client.GetTradeVolume();
             //Console.WriteLine("trade volume: " + tradeVolume.ToString() + "\n\n");
-            
+
             #endregion
-           
+
             #region Simple trading requests
 
             //var closeDictionary = new Dictionary<string,string>();
@@ -108,7 +108,7 @@ namespace KrakenClientConsole
 
             //var cancelOrder = client.CancelOrder("");
             //Console.WriteLine("cancel order : " + cancelOrder.ToString());
-            
+
             #endregion
 
             #region Using the broker helper
@@ -119,18 +119,18 @@ namespace KrakenClientConsole
 
             //CancelOrder(ref openingOrder);
 
-            Stopwatch stopwatch = new Stopwatch();
-            KrakenOrder order = new KrakenOrder();
-            order.TxId = "OYNRKT-RQB5J-OM4DQU";
-            for (int i = 1; i <= 10; i++)
-            {
+            //Stopwatch stopwatch = new Stopwatch();
+            //KrakenOrder order = new KrakenOrder();
+            //order.TxId = "OYNRKT-RQB5J-OM4DQU";
+            //for (int i = 1; i <= 10; i++)
+            //{
 
-                stopwatch.Start();
-                var res = broker.RefreshOrder(ref order);
-                stopwatch.Stop();
-                Console.WriteLine(stopwatch.Elapsed.ToString());
-                stopwatch.Start();
-            }
+            //    stopwatch.Start();
+            //    var res = broker.RefreshOrder(ref order);
+            //    stopwatch.Stop();
+            //    Console.WriteLine(stopwatch.Elapsed.ToString());
+            //    stopwatch.Start();
+            //}
             #endregion    
 
             Console.ReadKey();
