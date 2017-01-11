@@ -7,7 +7,8 @@
 *.sln.docstates
 
 # Build results
-.config
+Web.config
+App.config
 packages
 bin
 
@@ -152,3 +153,4 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
+/RateLimiting/

@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Jayrock.Json;
 using Jayrock.Json.Conversion;
 using System.Net;
 using System.Configuration;
 using System.IO;
 using System.Security.Cryptography;
-using PennedObjects.RateLimiting;
+using JackLeitch.RateGate;
 
 namespace KrakenClient
 {
